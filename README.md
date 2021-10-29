@@ -13,13 +13,13 @@ Your want to understand the sales volumes distribution (fast/slow movers) and de
 
 I have designed this **Streamlit App** to provide a tool to **Supply Chain Engineers** for Product Segmentation, with a focus on retail products, of their portofolio considering the complexity of the demand and the volumes contribution of each item.
 
-# Understand the theory behind 📜
+### Understand the theory behind 📜
 In this [Medium Article](https://towardsdatascience.com/product-segmentation-for-retail-with-python-c85cc0930f9a), you can find details about the theory used to build this tool. 
 
 # Acces the appplication 🖥️ 
 Here: [Product Segmentation for Retail](https://share.streamlit.io/samirsaci/segmentation/segmentation.py)
 
-## How should you use it?
+## **Step 0: Why should you use it?**
 This Streamlit Web Application has been designed for Supply Chain Engineers to support them in their Inventory Management. It will help you to automate product segmentation using statistics.
 
 ## **Step 1: What do you want to do?**
@@ -62,11 +62,10 @@ OR
   <img align="center" src="images/step_4.PNG" width=75%>
 </p>
 
-💡 _In this step you will show at what granularity you want to do your analysis. For example it can be at:
-  - Item, Store level: that means the same item in two stores will represent two SKU
-  - Item ID level: that means you group the sales of your item in all stores
-  ...
-_
+💡 _In this step you will show at what granularity you want to do your analysis. For example it can be at:_
+  - _Item, Store level: that means the same item in two stores will represent two SKU_
+  - _Item ID level: that means you group the sales of your item in all stores_
+
 **5. 🛍️ [Parameters] select one feature you want to use for analysis by family**
 <p align="center">
   <img align="center" src="images/step_5.PNG" width=75%>
