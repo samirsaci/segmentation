@@ -14,7 +14,7 @@ def introduction():
     col1, col2 = st.beta_columns(2)
     with col1:
         st.markdown('''
-              📖[Source Code](https://github.com/samirsaci/)''')
+              📖[Source Code](https://github.com/samirsaci/segmentation/)''')
     with col2:
         st.markdown('''
              👁️‍🗨️[User Guide](https://github.com/samirsaci/)''')
