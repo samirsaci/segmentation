@@ -43,11 +43,11 @@ def upload_ui():
     # User Guide/Source Guide
     st.sidebar.markdown('''
             **📖 [User Guide]
-            ()**
+            (https://github.com/samirsaci/segmentation)**
         ''')
     st.sidebar.markdown('''
             **👁️‍🗨️ [Source Code]
-            ()**
+            (https://github.com/samirsaci/segmentation)**
         ''')
     # Process filtering
     st.write("\n")
