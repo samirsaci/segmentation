@@ -14,8 +14,7 @@ def introduction():
     col1, col2 = st.beta_columns(2)
     with col1:
         st.markdown('''
-              📖 <a href="https://github.com/samirsaci/segmentation">**User Guide**</a>
-        ''')
+              [📖 User Guide](https://github.com/samirsaci/)''')
     with col2:
         st.markdown('''
              👁️‍🗨️ <a href="https://github.com/samirsaci/">**Source Code**</a>
