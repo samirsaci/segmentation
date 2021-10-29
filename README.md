@@ -2,7 +2,7 @@
 *A statistical methodology to segment your products based on turnover and demand variability*
 
 <p align="center">
-  <img align="center" src="https://miro.medium.com/max/1280/1*JhUhKtJdNQR2QA4IkRTtEw.png">
+  '![alt text](https://github.com/samirsaci/segmentation/tree/master/images/streamlit_capture.png)'
 </p>
 
 Product segmentation refers to the activity of grouping products that have similar characteristics and serve a similar market. It is usually related to marketing (Sales Categories) or manufacturing (Production Processes).
