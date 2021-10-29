@@ -42,13 +42,11 @@ def upload_ui():
         date_col, metric_col, list_var, list_sku, family_col = dataset_ui(df_abc, df, dataset_type)
     # User Guide/Source Guide
     st.sidebar.markdown('''
-            **📖 [User Guide]
-            (https://github.com/samirsaci/segmentation)**
-        ''')
+             📖 <a href="https://github.com/samirsaci/segmentation">**User Guide**</a>
+        ''', unsafe_allow_html=True)
     st.sidebar.markdown('''
-            **👁️‍🗨️ [Source Code]
-            (https://github.com/samirsaci/segmentation)**
-        ''')
+             👁️‍🗨️ <a href="https://github.com/samirsaci/segmentation">**Source Code**</a>
+        ''', unsafe_allow_html=True)
     # Process filtering
     st.write("\n")
     st.subheader('''📊 Your dataset with the final version of the features''')
