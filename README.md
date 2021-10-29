@@ -1,4 +1,4 @@
-# Automate Product Segmentation with this Streamlit Web Application 📈
+# Automate Statiscal Product Segmentation with a Streamlit WebApp 📈
 *A statistical methodology to segment your products based on turnover and demand variability*
 
 <p align="center">
@@ -13,7 +13,7 @@ Your want to understand the sales volumes distribution (fast/slow movers) and de
 
 I have designed this **Streamlit App** to provide a tool to **Supply Chain Engineers** for Product Segmentation, with a focus on retail products, of their portofolio considering the complexity of the demand and the volumes contribution of each item.
 
-### Medium Article
+## Understand the theory behind 📜
 In this [Medium Article](https://towardsdatascience.com/product-segmentation-for-retail-with-python-c85cc0930f9a), you can find details about the theory used to build this tool. 
 
 # Acces the appplication 🖥️ 
