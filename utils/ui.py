@@ -42,7 +42,7 @@ def upload_ui():
         date_col, metric_col, list_var, list_sku, family_col = dataset_ui(df_abc, df, dataset_type)
     # User Guide/Source Guide
     st.sidebar.markdown('''
-             📖 <a href="https://github.com/samirsaci/segmentation#readme">**User Guide**</a>
+             📖 [User Guide](https://github.com/samirsaci/segmentation#readme)
         ''', unsafe_allow_html=True)
     st.sidebar.markdown('''
              👁️‍🗨️ <a href="https://github.com/samirsaci/segmentation#readme">**Source Code**</a>

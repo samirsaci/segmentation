@@ -1,5 +1,5 @@
-# Automate Statistical Product Segmentation with a Streamlit WebApp 📈
-*A statistical methodology to segment your products based on turnover and demand variability*
+# Automate ABC Analysis & Product Segmentation with a Streamlit 📈
+*A statistical methodology to segment your products based on turnover and demand variability using an automated solution with a web application designed with the framework Streamlit*
 
 <p align="center">
   <img align="center" src="images/streamlit_capture.PNG" width=75%>
@@ -57,7 +57,7 @@ OR
 
 💡 _This step will basically help you to remove the columns that you do not need for your analysis to increase the speed of computation and reduce the usage of ressources._
 
-4. 🏬 [Parameters] select all the related to product master data (SKU ID, FAMILIY, CATEGORY, STORE LOCATION)
+**4. 🏬 [Parameters] select all the related to product master data (SKU ID, FAMILIY, CATEGORY, STORE LOCATION)**
 <p align="center">
   <img align="center" src="images/step_4.PNG" width=75%>
 </p>
