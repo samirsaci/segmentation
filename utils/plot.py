@@ -26,9 +26,9 @@ def pareto_plot(df):
 
     return nsku_qty80, qty_nsku20
 
-def abc_analysis(df, interval):
+def abc_analysis(df, interval, list_family, family_col):
     fig = px.scatter(
-    data_frame=df,
+    data_frame=df[df[family_col].isin(list_family)],
     width=800, 
     height=600,
     x='QTY%', 
@@ -88,7 +88,7 @@ def distribution(df_abc, df, date_col):
     LIST_DAYS = list(df[date_col].unique())
     col1, col2 = st.beta_columns(2)
     with col1:
-        item_low = st.selectbox("3 items with the lowest CV",index= 0, options =LIST_LOW,key="date")
+        item_low = st.selectbox("TOP 3 SKU WITH THE LOWEST CV",index= 0, options =LIST_LOW,key="date")
     # ABC @ ITEM-LEVEL
     # Item with Low CV
     df_dist = df[df['ITEM'].isin(LIST_LOW)].copy()

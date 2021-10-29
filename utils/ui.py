@@ -31,7 +31,7 @@ def dataset_ui(df_abc, df, dataset_type):
     output = 0 
 
     st.subheader('🛎️ Please choose the following features in your dataset')
-    with st.beta_expander("Features to use for the analysis"):
+    with st.beta_expander("FEATURES TO USE FOR THE ANALYSIS"):
         st.markdown('''
         Select the columns that you want to include in the analysis of your sales records._
     ''')
@@ -40,7 +40,7 @@ def dataset_ui(df_abc, df, dataset_type):
             dict_var[column] = st.checkbox("{} (IN/OUT)".format(column), value = 1)
 
     if dataset_type == 'UPLOADED':
-        with st.beta_expander("Features for the SKU information (ID, STORE, FAMILY)"):
+        with st.beta_expander("FEATURES FOR THE SKU INFORMATION (ID, STORE, FAMILY)"):
             st.markdown('''
         Select the columns used for product master data (SKU ID, Family, Category, Store Location)_
     ''')
@@ -52,7 +52,7 @@ def dataset_ui(df_abc, df, dataset_type):
                     val = 0
                 dict_sku[column] = st.checkbox("{} (YES/NO)".format(column) , value = val)
     else:
-        with st.beta_expander("Features for the SKU information (ID, STORE, FAMILY)"):
+        with st.beta_expander("FEATURES FOR THE SKU INFORMATION (ID, STORE, FAMILY)"):
             st.markdown('''
         _Select the columns used for product master data (SKU ID, Family, Category, Store Location)_
     ''')
@@ -64,7 +64,7 @@ def dataset_ui(df_abc, df, dataset_type):
                     val = 0
                 dict_sku[column] = st.checkbox("{} (YES/NO)".format(column) , value = val)
 
-    with st.beta_expander("Features for the SKU FAMILY"):
+    with st.beta_expander("FEATURES FOR THE SKU FAMILY"):
         st.markdown('''
         _Select the column you want to use to group your SKUs (Category, Sub-Category, Department)_
     ''')
@@ -88,14 +88,16 @@ def pareto_ui(df_abc, nsku_qty80, qty_nsku20):
 
 def abc_ui(df, family_col):
     st.header("**ABC Analysis with Demand Variability 🛠️**")
-    interval = st.slider(
-            'set the maximum value for y-axis CV',
+    col1,col2 = st.beta_columns(2)
+    with col1:
+            interval = st.slider(
+            'SET THE MAXIMUM VALUE FOR Y-AXIS CV',
             0, 
             int(df['CV'].max())
             , value = 4)
 
     dict_family = {}
-    with st.beta_expander("Select the product families you want to include"):
+    with st.beta_expander("SELECT THE SKU FAMILIES YOU WANT TO INCLUDE IN THE CHART"):
         for miff in df[family_col].unique():
                 dict_family[miff] = st.checkbox("{} (YES/NO)".format(miff) , value = 1)
     filtered = filter(lambda col: dict_family[col]==1, df[family_col].unique())

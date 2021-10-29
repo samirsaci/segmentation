@@ -117,7 +117,7 @@ if start_calculation:
 
     # Part 2: ABC Analysis
     interval, list_family = abc_ui(df_abc, family_col)
-    abc_analysis(df_abc, interval)
+    abc_analysis(df_abc, interval, list_family, family_col)
 
     # Part 3: Normality Test
     normality_ui()
