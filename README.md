@@ -36,25 +36,27 @@ OR
 
 ## **Step 2: Prepare the analysis**
 
-1. 💾 Upload your dataset of sales records
+**1. 💾 Upload your dataset of sales records**
 <p align="center">
   <img align="center" src="images/step_1.PNG" width=40%>
 </p>
 
 💡 _Please make sure that you dataset format is csv with a file size lower than 200MB. If you want to increase the size, you'd better copy this repository and deploy the app locally following the instructions below._
-2. 📅 [Parameters] select the columns for the date (day, week, year) and the values (quantity, $)
+
+**2. 📅 [Parameters] select the columns for the date (day, week, year) and the values (quantity, $)**
 <p align="center">
   <img align="center" src="images/step_2.PNG" width=75%>
 </p>
 
 💡 _If you have several columns for the date (day, week, month) and for the values (quantity, amount) you can use only one column per category for each run of calculation._
 
-3. 📉 [Parameters] select all the columns you want to keep in the analysis
+**3. 📉 [Parameters] select all the columns you want to keep in the analysis**
 <p align="center">
   <img align="center" src="images/step_3.PNG" width=75%>
 </p>
 
 💡 _This step will basically help you to remove the columns that you do not need for your analysis to increase the speed of computation and reduce the usage of ressources._
+
 4. 🏬 [Parameters] select all the related to product master data (SKU ID, FAMILIY, CATEGORY, STORE LOCATION)
 <p align="center">
   <img align="center" src="images/step_4.PNG" width=75%>
@@ -65,13 +67,14 @@ OR
   - Item ID level: that means you group the sales of your item in all stores
   ...
 _
-5. 🛍️ [Parameters] select one feature you want to use for analysis by family
+**5. 🛍️ [Parameters] select one feature you want to use for analysis by family**
 <p align="center">
   <img align="center" src="images/step_5.PNG" width=75%>
 </p>
 
 💡 _This feature will be used to plot the repartition of (A, B, C) product by family_
-6. 🖱️ Click on Start Calculation? to launch the analysis
+
+**6. 🖱️ Click on Start Calculation? to launch the analysis**
 <p align="center">
   <img align="center" src="images/step_6.PNG" width=75%>
 </p>
