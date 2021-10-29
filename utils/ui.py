@@ -15,7 +15,7 @@ def introduction():
     with col1:
         st.markdown('''
               📖 <a href="https://github.com/samirsaci/segmentation">**User Guide**</a>
-        ''', unsafe_allow_html=True)
+        ''')
     with col2:
         st.markdown('''
              👁️‍🗨️ <a href="https://github.com/samirsaci/">**Source Code**</a>
