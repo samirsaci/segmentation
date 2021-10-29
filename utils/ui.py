@@ -17,7 +17,7 @@ def introduction():
               📖[Source Code](https://github.com/samirsaci/segmentation/)''')
     with col2:
         st.sidebar.markdown('''
-             👁️‍🗨️[User Guide](https://github.com/samirsaci/)''')
+             👁️‍🗨️[User Guide](https://github.com/samirsaci/segmentation/)''')
     with st.beta_expander('''How can this app help you?'''):
         st.write('''This Streamlit Web Application has been designed for **Supply Chain Engineers** to support them in their **Inventory Management**.
         It will help you to automate **product segmentation using statistics**.''')

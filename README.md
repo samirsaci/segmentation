@@ -17,7 +17,7 @@ I have designed this **Streamlit App** to provide a tool to **Supply Chain Engin
 In this [Medium Article](https://towardsdatascience.com/product-segmentation-for-retail-with-python-c85cc0930f9a), you can find details about the theory used to build this tool. 
 
 # Access the application 🖥️ 
-> Access it here: [Product Segmentation for Retail](https://share.streamlit.io/samirsaci/segmentation/segmentation.py)
+> Access it here: [Product Segmentation for Retail](https://share.streamlit.io/samirsaci/segmentation/main/segmentation.py)
 
 ## **Step 0: Why should you use it?**
 This Streamlit Web Application has been designed for Supply Chain Engineers to support them in their Inventory Management. It will help you to automate product segmentation using statistics.
