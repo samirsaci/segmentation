@@ -20,6 +20,11 @@ def load_local():
     df_abc = pd.read_csv('data/example_segmentation.csv',sep=None ,engine='python', encoding='utf-8',
                 parse_dates=True,
                 infer_datetime_format=True)
+    # Mapping Family
+    for col in ['CATEGORY', 'FAMILY']:
+        LIST_UNIQUE = df_abc[col].unique()
+        df_abc[col] = df_abc[col].map(
+        dict(zip(LIST_UNIQUE, [col + '_' + str(i) for i in range(len(LIST_UNIQUE))])))
     # Sample data used to show the head
     df = pd.read_csv('data/df_sample_dist.csv',sep=None ,engine='python', encoding='utf-8',
                 parse_dates=True,

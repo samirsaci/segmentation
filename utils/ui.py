@@ -1,4 +1,9 @@
 import streamlit as st
+import pandas as pd
+from utils.processing import (
+    load_local,
+    load_upload)
+import base64
 
 def introduction():
     st.title('Product Segmentation for Retail 🛍️')
@@ -17,6 +22,42 @@ def introduction():
     5. 🛍️ [Parameters] select one feature you want to use for analysis by family
     6. 🖱️  Click on **Start Calculation?** to launch the analysis
     """)
+
+def upload_ui():
+    st.sidebar.subheader('Load a Dataset loading 💾')
+    st.sidebar.write("Upload your dataset (.csv)")
+    # Upload
+    input = st.sidebar.file_uploader('')
+    if input is None:
+        dataset_type = 'LOCAL'
+        st.sidebar.write("_If you do not upload a dataset, an example is automatically loaded to show you the features of this app._")
+        df_abc, df = load_local()
+        date_col, metric_col, list_var, list_sku, family_col = dataset_ui(df_abc, df, dataset_type)
+    else:
+        dataset_type = 'UPLOADED'
+        with st.spinner('Loading data..'):
+            df = load_upload(input)
+            st.write(df.head())
+            df_abc = pd.DataFrame()
+        date_col, metric_col, list_var, list_sku, family_col = dataset_ui(df_abc, df, dataset_type)
+    # User Guide/Source Guide
+    st.sidebar.markdown('''
+            **📖 [User Guide]
+            ()**
+        ''')
+    st.sidebar.markdown('''
+            **👁️‍🗨️ [Source Code]
+            ()**
+        ''')
+    # Process filtering
+    st.write("\n")
+    st.subheader('''📊 Your dataset with the final version of the features''')
+    df = df[list_var].copy()
+    st.write(df.head(2))
+
+    return date_col, metric_col, list_var, list_sku, family_col, dataset_type, df, df_abc
+
+
 
 def dataset_ui(df_abc, df, dataset_type):
     # Show Features
@@ -87,7 +128,7 @@ def pareto_ui(df_abc, nsku_qty80, qty_nsku20):
         st.write('20% of your SKU portofolio represent **{}% for your volume**'.format(qty_nsku20))
 
 def abc_ui(df, family_col):
-    st.header("**ABC Analysis with Demand Variability 🛠️**")
+    st.header("**ABC Analysis with Demand Variability 🔤**")
     col1,col2 = st.beta_columns(2)
     with col1:
             interval = st.slider(
@@ -107,7 +148,7 @@ def abc_ui(df, family_col):
 
 
 def normality_ui():
-    st.header("**Normality Test 🛠️**")
+    st.header("**Normality Test ✔️**")
     st.markdown(
         '''_Can we reject the null hypothesis that the sales distribution of the item follows a normal distribution?_
 ''')
@@ -118,10 +159,20 @@ _(**[Documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.s
 ''')
 
 def distribution_ui():
-    st.header("**Example of distributions with a low CV 🛠️**")
+    st.header("**Example of distributions with a low CV 📟**")
     st.markdown(
     '''
     _A rule of thumb to estimate the normality of a distribution is to 
     assume that below 0.5 you can assumte that the distribution is normal._
     ''')
     
+def export_ui(df_abc):
+    st.header('**Export results ✨**')
+    st.write("_Finally you can export the results of your segmentation with all the parameters calculated._")
+    if st.checkbox('Export Data',key='show'):
+        with st.spinner("Exporting.."):
+            st.write(df_abc.head())
+            df_abc = df_abc.to_csv(decimal=',')
+            b64 = base64.b64encode(df_abc.encode()).decode()
+            href = f'<a href="data:file/csv;base64,{b64}">Download CSV File</a>'
+            st.markdown(href, unsafe_allow_html=True)

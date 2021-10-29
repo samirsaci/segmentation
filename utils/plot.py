@@ -51,6 +51,22 @@ def abc_analysis(df, interval, list_family, family_col):
     fig.update(layout_yaxis_range = [0,interval])
     st.write(fig)
 
+def abc_barplot(df_abc, family_col, metric_col):
+    # BAR PLOT OF SKU DISTRIBUTION BY FAMILY AND ABC CLASS
+    df_dist = pd.DataFrame(df_abc[[family_col,'ABC', metric_col]].groupby(
+        [family_col,'ABC'])[metric_col].count()).reset_index()
+    # Simple histogram
+    fig = px.bar(data_frame=df_dist,
+        width=800, 
+        height=600,
+        x=family_col,
+        y = metric_col,
+        color = 'ABC',
+        labels={ family_col: 'Split by {}'.format(family_col),
+        metric_col: 'Number of SKU'})
+    fig.update_traces(marker_line_width=1,marker_line_color="black")
+    st.write(fig)
+
 def normality_test(df, interval,family_col):
     fig = px.scatter(
     data_frame=df,
