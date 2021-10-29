@@ -10,6 +10,16 @@ def introduction():
     st.markdown('''
         _For more information about the theory behind: **[Article - Product Segmentation for Retail](https://towardsdatascience.com/product-segmentation-for-retail-with-python-c85cc0930f9a)**_
     ''')
+       # User Guide/Source Guide
+    col1, col2 = st.beta_columns(2)
+    with col1:
+        st.markdown('''
+              📖 <a href="https://github.com/samirsaci/segmentation">**User Guide**</a>
+        ''', unsafe_allow_html=True)
+    with col2:
+        st.markdown('''
+             👁️‍🗨️ <a href="https://github.com/samirsaci/">**Source Code**</a>
+        ''', unsafe_allow_html=True)
     with st.beta_expander('''How can this app help you?'''):
         st.write('''This Streamlit Web Application has been designed for **Supply Chain Engineers** to support them in their **Inventory Management**.
         It will help you to automate **product segmentation using statistics**.''')
@@ -44,13 +54,7 @@ def upload_ui():
             st.write(df.head())
             df_abc = pd.DataFrame()
         date_col, metric_col, list_var, list_sku, family_col = dataset_ui(df_abc, df, dataset_type)
-    # User Guide/Source Guide
-    st.sidebar.markdown('''
-              📖 <a href="https://github.com/samirsaci/>**User Guide**</a>
-        ''', unsafe_allow_html=True)
-    st.sidebar.markdown('''
-             👁️‍🗨️ <a href="https://github.com/samirsaci/">**Source Code**</a>
-        ''', unsafe_allow_html=True)
+ 
     # Process filtering
     st.write("\n")
     st.subheader('''📊 Your dataset with the final version of the features''')
