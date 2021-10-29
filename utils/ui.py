@@ -6,7 +6,7 @@ from utils.processing import (
 import base64
 
 def introduction():
-    st.title('Product Segmentation for Retail 🛍️')
+    st.title('ABC Analysis & Product Segmentation 🛍️')
     st.markdown('''
         _For more information about the theory behind: **[Article - Product Segmentation for Retail](https://towardsdatascience.com/product-segmentation-for-retail-with-python-c85cc0930f9a)**_
     ''')
@@ -21,6 +21,10 @@ def introduction():
     4. 🏬 [Parameters] select all the related to product master data _(SKU ID, FAMILIY, CATEGORY, STORE LOCATION)_
     5. 🛍️ [Parameters] select one feature you want to use for analysis by family
     6. 🖱️  Click on **Start Calculation?** to launch the analysis
+     
+    \
+    _For more details have a look at the [📖 User Guide](https://github.com/samirsaci/segmentation)_
+
     """)
 
 def upload_ui():
@@ -42,10 +46,10 @@ def upload_ui():
         date_col, metric_col, list_var, list_sku, family_col = dataset_ui(df_abc, df, dataset_type)
     # User Guide/Source Guide
     st.sidebar.markdown('''
-              📖 <a href="https://github.com/samirsaci/segmentation#readme">**User Guide**</a>
+              📖 <a href="https://github.com/samirsaci/segmentation">**User Guide**</a>
         ''', unsafe_allow_html=True)
     st.sidebar.markdown('''
-             👁️‍🗨️ <a href="https://github.com/samirsaci/segmentation#readme">**Source Code**</a>
+             👁️‍🗨️ <a href="https://github.com/samirsaci/segmentation">**Source Code**</a>
         ''', unsafe_allow_html=True)
     # Process filtering
     st.write("\n")
@@ -148,7 +152,7 @@ def abc_ui(df, family_col):
 def normality_ui():
     st.header("**Normality Test ✔️**")
     st.markdown(
-        '''_Can we reject the null hypothesis that the sales distribution of the item follows a normal distribution?_
+'''_Can we reject the null hypothesis that the sales distribution of the item follows a normal distribution?_
 ''')
     st.markdown(
         '''
@@ -159,10 +163,10 @@ _(**[Documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.s
 def distribution_ui():
     st.header("**Example of distributions with a low CV 📟**")
     st.markdown(
-    '''
-    _A rule of thumb to estimate the normality of a distribution is to 
-    assume that below 0.5 you can assumte that the distribution is normal._
-    ''')
+'''
+_A rule of thumb to estimate the normality of a distribution is to 
+assume that below 0.5 you can assumte that the distribution is normal._
+''')
     
 def export_ui(df_abc):
     st.header('**Export results ✨**')
