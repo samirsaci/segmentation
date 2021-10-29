@@ -13,10 +13,10 @@ def introduction():
        # User Guide/Source Guide
     col1, col2 = st.beta_columns(2)
     with col1:
-        st.markdown('''
+        st.sidebar.markdown('''
               📖[Source Code](https://github.com/samirsaci/segmentation/)''')
     with col2:
-        st.markdown('''
+        st.sidebar.markdown('''
              👁️‍🗨️[User Guide](https://github.com/samirsaci/)''')
     with st.beta_expander('''How can this app help you?'''):
         st.write('''This Streamlit Web Application has been designed for **Supply Chain Engineers** to support them in their **Inventory Management**.
