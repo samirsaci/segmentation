@@ -14,11 +14,10 @@ def introduction():
     col1, col2 = st.beta_columns(2)
     with col1:
         st.markdown('''
-              [📖 User Guide](https://github.com/samirsaci/)''')
+              📖[Source Code](https://github.com/samirsaci/)''')
     with col2:
         st.markdown('''
-             👁️‍🗨️ <a href="https://github.com/samirsaci/">**Source Code**</a>
-        ''', unsafe_allow_html=True)
+             👁️‍🗨️[User Guide](https://github.com/samirsaci/)''')
     with st.beta_expander('''How can this app help you?'''):
         st.write('''This Streamlit Web Application has been designed for **Supply Chain Engineers** to support them in their **Inventory Management**.
         It will help you to automate **product segmentation using statistics**.''')
