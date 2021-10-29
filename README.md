@@ -108,10 +108,6 @@ This repository code you will find all the code used to explain the concepts pre
 ### Run the application  
 
     streamlit run segmentation.py 
-  
-### Active your virtual environment    
-    
-    source venv/bin/activate
 
 ### Click on the Network URL in the shell   
   <p align="center">
