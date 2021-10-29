@@ -10,10 +10,12 @@ def introduction():
         It will help you to automate **product segmentation using statistics**.''')
         st.markdown(
     """
-    1. Upload a dataset or use the example 💾 
-    2. Pick a model and set its hyper-parameters ⚙️ 
-    3. Train it and check its performance metrics and decision boundary on train and test data 📉 
-    4. Diagnose possible overitting and experiment with other settings 🩺 
+    1. 💾 Upload a dataset or use the example  _(If you use the example you do not need to follow the next steps.)_
+    2. 📅 [Parameters] select the columns for the date _(day, week, year)_ and the values _(quantity, $)_ 
+    3. 📉 [Parameters] select all the columns you want to keep in the analysis
+    4. 🏬 [Parameters] select all the related to product master data _(SKU ID, FAMILIY, CATEGORY, STORE LOCATION)_
+    5. 🛍️ [Parameters] select one feature you want to use for analysis by family
+    6. 🖱️  Click on **Start Calculation?** to launch the analysis
     """)
 
 def dataset_ui(df_abc, df, dataset_type):
@@ -84,20 +86,22 @@ def pareto_ui(df_abc, nsku_qty80, qty_nsku20):
     with col2:    
         st.write('20% of your SKU portofolio represent **{}% for your volume**'.format(qty_nsku20))
 
-def abc_ui(df):
-    st.header("**ABC Analysis using Coefficient of Variation 🛠️**")
-    col1, col2= st.beta_columns(2)
-    with col1:
-        interval = st.slider(
+def abc_ui(df, family_col):
+    st.header("**ABC Analysis with Demand Variability 🛠️**")
+    interval = st.slider(
             'set the maximum value for y-axis CV',
             0, 
             int(df['CV'].max())
             , value = 4)
-    with col2:
-        n_classes1 = st.number_input("centers", 2, 5, 2, 1)
-    st.write(interval)
 
-    return interval
+    dict_family = {}
+    with st.beta_expander("Select the product families you want to include"):
+        for miff in df[family_col].unique():
+                dict_family[miff] = st.checkbox("{} (YES/NO)".format(miff) , value = 1)
+    filtered = filter(lambda col: dict_family[col]==1, df[family_col].unique())
+    list_family =list(filtered)
+
+    return interval, list_family
 
 
 def normality_ui():

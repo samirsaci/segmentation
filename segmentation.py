@@ -92,7 +92,7 @@ df = df[list_var].copy()
 st.write(df.head(2))
 
 # Start Calculation ?
-if st.checkbox('Start Calculation ?',key='show', value=False):
+if st.checkbox('Start Calculation?',key='show', value=False):
     start_calculation = True
 else:
     if dataset_type == 'LOCAL':
@@ -116,7 +116,7 @@ if start_calculation:
     pareto_ui(df_abc, nsku_qty80, qty_nsku20)
 
     # Part 2: ABC Analysis
-    interval = abc_ui(df_abc)
+    interval, list_family = abc_ui(df_abc, family_col)
     abc_analysis(df_abc, interval)
 
     # Part 3: Normality Test

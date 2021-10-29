@@ -68,5 +68,8 @@ def abc_processing(df, date_col, metric_col, list_sku):
     df_abc['ABC'] = pd.Series(range(len(df_abc))).apply(lambda t: 'A' if t <= n_a-1 else 'B' if t <= n_b-1 else 'C')
     # A, B, C on turnover
     to_a, to_b = df_abc[df_abc['SKU_ID']==n_a]['QTY%'].max(), df_abc[df_abc['SKU_ID']==n_b]['QTY%'].max()
+    # FOCUS = F(CV, ABC)
+    df_abc['FOCUS'] = df_abc[['ABC','CV']].apply(lambda t:
+    'LOW_IMPORTANCE' if t['ABC']=='C' else 'STABLE_DEMAND' if (t['CV']<=1) else 'HIGH_IMPORTANCE', axis = 1)
 
     return df_abc, n_sku, n_a, n_b, to_a, to_b 
