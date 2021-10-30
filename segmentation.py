@@ -58,7 +58,7 @@ caching.clear_cache()
 st.header("**Information about the Dataset 🛠️**")
 
 # Upload Data Set
-date_col, metric_col, list_var, list_sku, family_col, dataset_type, df, df_abc = upload_ui()
+date_col, metric_col, list_var, sku_col, family_col, dataset_type, df, df_abc = upload_ui()
 
 
 # Start Calculation ?
@@ -72,7 +72,7 @@ else:
 
 # Process df_abc for uploaded dataset
 if dataset_type == 'UPLOADED' and start_calculation:
-    df_abc, n_sku, n_a, n_b, to_a, to_b  = abc_processing(df, date_col, metric_col, list_sku)
+    df_abc, n_sku, n_a, n_b, to_a, to_b  = abc_processing(df, date_col, metric_col, sku_col, family_col)
 else:
     list_sku = ['SKU', 'ITEM', 'FAMILY', 'CATEGORY', 'STORE']
 
@@ -95,7 +95,7 @@ if start_calculation:
 
     # Part 4: Low CV Distribution
     distribution_ui()
-    distribution(df_abc, df, date_col)
+    distribution(df_abc, df, date_col, sku_col, metric_col)
                 
     # Part 5: Export Results
     export_ui(df_abc)

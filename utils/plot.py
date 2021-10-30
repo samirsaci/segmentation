@@ -98,27 +98,26 @@ to meet your targets of cycle service level.
 """)
 
 
-def distribution(df_abc, df, date_col):
+def distribution(df_abc, df, date_col, sku_col, metric_col):
     # List of items with the lowest CV
-
-    LIST_LOW = list(df_abc.sort_values(['CV'], ascending = True)['ITEM'].values[0:3])
+    LIST_LOW = list(df_abc.sort_values(['CV'], ascending = True)[sku_col].values[0:3])
     LIST_DAYS = list(df[date_col].unique())
     col1, col2 = st.beta_columns(2)
     with col1:
         item_low = st.selectbox("TOP 3 SKU WITH THE LOWEST CV",index= 0, options =LIST_LOW,key="date")
     # ABC @ ITEM-LEVEL
     # Item with Low CV
-    df_dist = df[df['ITEM'].isin(LIST_LOW)].copy()
+    df_dist = df[df[sku_col].isin(LIST_LOW)].copy()
     # ABC SKU-LEVEL
-    df_dist = pd.DataFrame(df_dist[['ITEM','DAY', 'QTY']]
-                        .groupby(['ITEM','DAY']).sum()).reset_index()
-    df_dist = df_dist[df_dist['ITEM']==item_low]
+    df_dist = pd.DataFrame(df_dist[[sku_col, date_col, metric_col]]
+                        .groupby([sku_col, date_col]).sum()).reset_index()
+    df_dist = df_dist[df_dist[sku_col]==item_low]
     # Simple histogram
     fig = px.histogram(data_frame=df_dist,
         width=800, 
         height=600,
-        x='QTY',
-        labels={ "QTY": 'Sales Volume per Day (Units/Day)',
+        x=metric_col,
+        labels={ metric_col: 'Sales Volume per Day (Units/Day)',
         "count": 'Number of Days'})
     fig.update_traces(marker_line_width=1,marker_line_color="black")
     st.write(fig)

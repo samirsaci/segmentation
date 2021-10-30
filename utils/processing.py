@@ -32,12 +32,14 @@ def load_local():
     
     return df_abc, df
 
-def abc_processing(df, date_col, metric_col, list_sku):
+def abc_processing(df, date_col, metric_col, sku_col, family_col):
+    # Group by (Item + Family)
+    GPBY = [sku_col, family_col]
     # DAYS 
     LIST_DAYS = list(df[date_col].unique())
     # Start Calculation
     df_abc = pd.pivot_table(df, 
-    index=list_sku, columns=date_col, values=metric_col, aggfunc=np.sum)
+    index=GPBY, columns=date_col, values=metric_col, aggfunc=np.sum)
     df_abc.reset_index(inplace = True)
     # Total Units
     df_abc['QTY'] = df_abc[LIST_DAYS].sum(axis = 1)

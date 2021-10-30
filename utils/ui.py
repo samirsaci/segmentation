@@ -65,65 +65,44 @@ def upload_ui():
 
 
 def dataset_ui(df_abc, df, dataset_type):
-    # Show Features
-    st.subheader("🔧 Please select columns for the following features")
-    columns = df.columns
-    # st.write(list(columns))
-    col1, col2 = st.beta_columns(2)
-    with col1:
-        date_col = st.selectbox("Select date column",index= len(df.columns) - 2,options=columns,key="date")
-    with col2:
-        metric_col = st.selectbox("Select values column",index=len(df.columns)-1,options=columns,key="values")
-    output = 0 
-
+    # SHOW PARAMETERS
+    expander_default = (dataset_type=='UPLOADED')
+    
     st.subheader('🛎️ Please choose the following features in your dataset')
     with st.beta_expander("FEATURES TO USE FOR THE ANALYSIS"):
         st.markdown('''
-        Select the columns that you want to include in the analysis of your sales records._
+        _Select the columns that you want to include in the analysis of your sales records._
     ''')
         dict_var = {}
         for column in df.columns:
             dict_var[column] = st.checkbox("{} (IN/OUT)".format(column), value = 1)
-
-    if dataset_type == 'UPLOADED':
-        with st.beta_expander("FEATURES FOR THE SKU INFORMATION (ID, STORE, FAMILY)"):
-            st.markdown('''
-        Select the columns used for product master data (SKU ID, Family, Category, Store Location)_
-    ''')
-            dict_sku = {}
-            for column in df.columns:
-                if column in ['SKU', 'ITEM', 'FAMILY', 'CATEGORY', 'STORE']:
-                    val = 1
-                else:
-                    val = 0
-                dict_sku[column] = st.checkbox("{} (YES/NO)".format(column) , value = val)
-    else:
-        with st.beta_expander("FEATURES FOR THE SKU INFORMATION (ID, STORE, FAMILY)"):
-            st.markdown('''
-        _Select the columns used for product master data (SKU ID, Family, Category, Store Location)_
-    ''')
-            dict_sku = {}
-            for column in df.columns:
-                if column in ['SKU', 'ITEM', 'FAMILY', 'CATEGORY', 'STORE']:
-                    val = 1
-                else:
-                    val = 0
-                dict_sku[column] = st.checkbox("{} (YES/NO)".format(column) , value = val)
-
-    with st.beta_expander("FEATURES FOR THE SKU FAMILY"):
-        st.markdown('''
-        _Select the column you want to use to group your SKUs (Category, Sub-Category, Department)_
-    ''')
-        family_col = st.selectbox("Select a column for the product family", index= 3,options=columns,key="date")
-
     filtered = filter(lambda col: dict_var[col]==1, df.columns)
     list_var =list(filtered)
 
-    filtered = filter(lambda col: dict_sku[col]==1, df.columns)
-    list_sku =list(filtered)
+    with st.beta_expander("FEATURES FOR THE DATES AND THE VALUES"):
+        columns = list_var
+        col1, col2 = st.beta_columns(2)
+        with col1:
+            date_col = st.selectbox("Select date column",index= len(columns) - 2,options=columns,key="date")
+        with col2:
+            metric_col = st.selectbox("Select values column",index=len(columns)-1,options=columns,key="values")
+        output = 0 
+
+    with st.beta_expander("FEATURE FOR THE SKU INFORMATION (ITEM ID)"):
+        st.markdown('''
+        _Select the columns used for product master data (SKU ID, Family, Category, Store Location)_
+    ''')
+        sku_col = st.selectbox("Select values column",index=1,options=list_var,key="values")
+
+    with st.beta_expander("FEATURE FOR THE SKU FAMILY"):
+        st.markdown('''
+        _Select the column you want to use to group your SKUs (Category, Sub-Category, Department)_
+    ''')
+        family_col = st.selectbox("Select a column for the product family", index= 3,options=list_var,key="date")
 
 
-    return date_col, metric_col, list_var, list_sku, family_col
+
+    return date_col, metric_col, list_var, sku_col, family_col
 
 def pareto_ui(df_abc, nsku_qty80, qty_nsku20):
     col1,col2 = st.beta_columns(2)
