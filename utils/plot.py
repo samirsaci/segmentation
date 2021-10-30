@@ -53,14 +53,14 @@ def abc_analysis(df, interval, list_family, family_col):
 
 def abc_barplot(df_abc, family_col, metric_col):
     # BAR PLOT OF SKU DISTRIBUTION BY FAMILY AND ABC CLASS
-    df_dist = pd.DataFrame(df_abc[[family_col,'ABC', metric_col]].groupby(
-        [family_col,'ABC'])[metric_col].count()).reset_index()
+    df_dist = pd.DataFrame(df_abc[[family_col,'ABC', 'QTY']].groupby(
+        [family_col,'ABC'])['QTY'].count()).reset_index()
     # Simple histogram
     fig = px.bar(data_frame=df_dist,
         width=800, 
         height=600,
         x=family_col,
-        y = metric_col,
+        y = 'QTY',
         color = 'ABC',
         labels={ family_col: 'Split by {}'.format(family_col),
         metric_col: 'Number of SKU'})
@@ -100,6 +100,7 @@ to meet your targets of cycle service level.
 
 def distribution(df_abc, df, date_col):
     # List of items with the lowest CV
+
     LIST_LOW = list(df_abc.sort_values(['CV'], ascending = True)['ITEM'].values[0:3])
     LIST_DAYS = list(df[date_col].unique())
     col1, col2 = st.beta_columns(2)
