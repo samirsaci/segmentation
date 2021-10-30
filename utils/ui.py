@@ -11,13 +11,11 @@ def introduction():
         _For more information about the theory behind: **[Article - Product Segmentation for Retail](https://towardsdatascience.com/product-segmentation-for-retail-with-python-c85cc0930f9a)**_
     ''')
        # User Guide/Source Guide
-    col1, col2 = st.beta_columns(2)
+    col1, col2 = st.sidebar.beta_columns(2)
     with col1:
-        st.sidebar.markdown('''
-              📖[Source Code](https://github.com/samirsaci/segmentation/)''')
+        st.sidebar.markdown('''📖 [Source Code](https://github.com/samirsaci/segmentation/)''')
     with col2:
-        st.sidebar.markdown('''
-             👁️‍🗨️[User Guide](https://github.com/samirsaci/segmentation/)''')
+        st.sidebar.markdown('''👁️‍🗨️ [User Guide](https://github.com/samirsaci/segmentation/)''')
     with st.beta_expander('''How can this app help you?'''):
         st.write('''This Streamlit Web Application has been designed for **Supply Chain Engineers** to support them in their **Inventory Management**.
         It will help you to automate **product segmentation using statistics**.''')
@@ -53,6 +51,9 @@ def upload_ui():
             df_abc = pd.DataFrame()
         date_col, metric_col, list_var, list_sku, family_col = dataset_ui(df_abc, df, dataset_type)
  
+    # Let's connect
+    st.sidebar.markdown('''😀 [LET'S CONNECT!](https://samirsaci.com/)''')
+
     # Process filtering
     st.write("\n")
     st.subheader('''📊 Your dataset with the final version of the features''')

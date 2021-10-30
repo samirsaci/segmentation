@@ -1,4 +1,4 @@
-# Automate ABC Analysis & Product Segmentation with a Streamlit 📈
+# Automate ABC Analysis & Product Segmentation with Streamlit 📈
 *A statistical methodology to segment your products based on turnover and demand variability using an automated solution with a web application designed with the framework Streamlit*
 
 <p align="center">
