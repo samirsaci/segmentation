@@ -85,7 +85,7 @@ OR
 ### **Pareto Analysis**
 
 <p align="center">
-  <img align="center" src="images/pareto.PNG" width=50%>
+  <img align="center" src="images/pareto.PNG" width=75%>
 </p>
 
 **INSIGHTS:** 
@@ -97,7 +97,7 @@ _For more information about the theory behind the pareto law and its application
 ### **ABC Analysis with Demand Variability**
 
 <p align="center">
-  <img align="center" src="images/abc_analysis.PNG" width=50%>
+  <img align="center" src="images/abc_analysis.PNG" width=75%>
 </p>
 
 **QUESTIONS: WHAT IS THE PROPORTION OF?** 
@@ -114,7 +114,7 @@ Your inventory management strategies will be impacted by this split:
 _For more information: [Medium Article](https://towardsdatascience.com/product-segmentation-for-retail-with-python-c85cc0930f9a)_
 
 <p align="center">
-  <img align="center" src="images/split_category.PNG" width=50%>
+  <img align="center" src="images/split_category.PNG" width=75%>
 </p>
 
 **QUESTIONS:** 
@@ -125,7 +125,7 @@ _For more information: [Medium Article](https://towardsdatascience.com/product-s
 ### **Normality Test**
 
 <p align="center">
-  <img align="center" src="images/normality.PNG" width=50%>
+  <img align="center" src="images/normality.PNG" width=75%>
 </p>
 
 **QUESTION:** 
