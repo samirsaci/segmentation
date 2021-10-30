@@ -71,7 +71,7 @@ def abc_processing(df, date_col, metric_col, sku_col, family_col):
     n_sku = len(df_abc)
     n_a, n_b = int(0.05*n_sku), int(0.5*n_sku)
     df_abc['SKU_ID'] = pd.Series(range(1, len(df_abc))).astype(int)
-    df_abc['SKU_%'] = (100 * pd.Series(range(1, len(df_abc))) / len(df_abc))
+    df_abc['SKU_%'] = 100 * (df_abc['SKU_ID'] / len(df_abc))
     df_abc['ABC'] = pd.Series(range(len(df_abc))).apply(lambda t: 'A' if t <= n_a-1 else 'B' if t <= n_b-1 else 'C')
     # A, B, C on turnover
     to_a, to_b = df_abc[df_abc['SKU_ID']==n_a]['QTY%'].max(), df_abc[df_abc['SKU_ID']==n_b]['QTY%'].max()

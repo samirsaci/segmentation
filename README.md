@@ -82,6 +82,60 @@ OR
 
 # Get insights about your sales records 💡
 
+### **Pareto Analysis**
+
+<p align="center">
+  <img align="center" src="images/pareto.PNG" width=50%>
+</p>
+
+**INSIGHTS:** 
+1. How many SKU represent 80% of your total sales?
+2. How much sales represent 20% of your SKUs?
+
+_For more information about the theory behind the pareto law and its application in Supply Chain Management: [Pareto Principle for Warehouse Layout Optimization](https://towardsdatascience.com/reduce-warehouse-space-with-the-pareto-principle-using-python-e722a6babe0e)_
+
+### **ABC Analysis with Demand Variability**
+
+<p align="center">
+  <img align="center" src="images/abc_analysis.PNG" width=50%>
+</p>
+
+**QUESTIONS: WHAT IS THE PROPORTION OF?** 
+1. **LOW IMPORTANCE SKUS**: C references
+2. **STABLE DEMAND SKUS**: A and B SKUs with a coefficient of variation below 1 
+3. **HIGH IMPORTANCE SKUS**: A and B SKUS with a high coefficient of variation
+
+Your inventory management strategies will be impacted by this split:
+- A minimum effort should be put in **LOW IMPORTANCE SKUS**
+- Automated rules with a moderate attention for **STABLE SKUS**
+- Complex replenishment rules and careful attention for **HIGH IMPORTANCE SKUS**
+
+
+_For more information: [Medium Article](https://towardsdatascience.com/product-segmentation-for-retail-with-python-c85cc0930f9a)_
+
+<p align="center">
+  <img align="center" src="images/split_category.PNG" width=50%>
+</p>
+
+**QUESTIONS:** 
+1. What is the split of SKUS by FAMILY?
+2. What is the split of SKUS by ABC class in each FAMILY?
+
+
+### **Normality Test**
+
+<p align="center">
+  <img align="center" src="images/normality.PNG" width=50%>
+</p>
+
+**QUESTION:** 
+- Which SKUs have a sales distribution that follows a normal distribution?
+
+Many inventory rules and safety stock formula can be used only if the sales distribution of your item is following a normal distribution. Thefore, it's better to know the % of your portofolio that can be managed easily.
+
+_For more information: [Inventory Management for Retail — Stochastic Demand](https://towardsdatascience.com/inventory-management-for-retail-stochastic-demand-3020a43d1c14)_
+
+
 # Build the application locally 🏗️ 
 
 ## **Build a python local environment** 

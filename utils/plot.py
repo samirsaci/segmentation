@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import streamlit as st
 import pandas as pd
 
-def pareto_plot(df):
+def pareto_plot(df_abc):
     fig = px.line(
-    data_frame=df,
+    data_frame=df_abc,
     width=800, 
     height=600,
     x='SKU_%', 
@@ -20,8 +20,8 @@ def pareto_plot(df):
     fig.add_hline(y=95, line_width=1, line_dash="dot", line_color="blue")
 
     # Quick Analysis
-    nsku_qty80 = round((100 * df[df['QTY%'] > 0.8]['SKU_%'].min()),2)
-    qty_nsku20 = round((df[df['SKU_%'] > 20]['QTY%_CS'].values[0]),2)
+    nsku_qty80 = round((df_abc[df_abc['QTY%_CS'] > 80]['SKU_%'].values[0]),2)
+    qty_nsku20 = round((df_abc[df_abc['SKU_%'] > 20]['QTY%_CS'].values[0]),2)
     st.write(fig)
 
     return nsku_qty80, qty_nsku20
