@@ -80,8 +80,7 @@ OR
 
 💡 _This feature will be used to plot the repartition of (A, B, C) product by family_
 
-
-This repository code you will find all the code used to explain the concepts presented in the article.
+# Get insights about your sales records 💡
 
 # Build the application locally 🏗️ 
 

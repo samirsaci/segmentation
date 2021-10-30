@@ -94,7 +94,7 @@ def normality_test(df, interval,family_col):
     """
 💡_For all the items that are normally distributed you can use a set of mathematical formula to estimate the minimum safety stock and build inventory management rules
 to meet your targets of cycle service level. 
-([More details in this Article](https://towardsdatascience.com/inventory-management-for-retail-stochastic-demand-3020a43d1c14))._
+([More details in this Article](https://towardsdatascience.com/inventory-management-for-retail-stochastic-demand-3020a43d1c14))_
 """)
 
 
