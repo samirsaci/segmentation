@@ -63,7 +63,7 @@ def abc_barplot(df_abc, family_col, metric_col):
         y = 'QTY',
         color = 'ABC',
         labels={ family_col: 'Split by {}'.format(family_col),
-        metric_col: 'Number of SKU'})
+        metric_col: 'Number of SKU'}, barmode = "group")
     fig.update_traces(marker_line_width=1,marker_line_color="black")
     st.write(fig)
 
