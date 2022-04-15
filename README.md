@@ -15,7 +15,7 @@ Your want to understand the sales volumes distribution (fast/slow movers) and de
 I have designed this **Streamlit App** to provide a tool to **Supply Chain Engineers** for Product Segmentation, with a focus on retail products, of their portofolio considering the complexity of the demand and the volumes contribution of each item.
 
 ### Understand the theory behind 📜
-In this [Medium Article](https://towardsdatascience.com/product-segmentation-for-retail-with-python-c85cc0930f9a), you can find details about the theory used to build this tool. 
+In this [Article](https://www.samirsaci.com/product-segmentation-for-retail-with-python/), you can find details about the theory used to build this tool. 
 
 # Access the application 🖥️ 
 > Access it here: [Product Segmentation for Retail](https://share.streamlit.io/samirsaci/segmentation/main/segmentation.py)
@@ -107,7 +107,7 @@ OR
 1. How many SKU represent 80% of your total sales?
 2. How much sales represent 20% of your SKUs?
 
-_For more information about the theory behind the pareto law and its application in Supply Chain Management: [Pareto Principle for Warehouse Layout Optimization](https://towardsdatascience.com/reduce-warehouse-space-with-the-pareto-principle-using-python-e722a6babe0e)_
+_For more information about the theory behind the pareto law and its application in Supply Chain Management: [Pareto Principle for Warehouse Layout Optimization](https://www.samirsaci.com/reduce-warehouse-space-with-the-pareto-principle-using-python/)_
 
 ### **ABC Analysis with Demand Variability**
 
@@ -128,7 +128,7 @@ Your inventory management strategies will be impacted by this split:
 - Complex replenishment rules and careful attention for **HIGH IMPORTANCE SKUS**
 
 
-_For more information: [Medium Article](https://towardsdatascience.com/product-segmentation-for-retail-with-python-c85cc0930f9a)_
+_For more information: [Article](https://www.samirsaci.com/product-segmentation-for-retail-with-python/)_
 
 <p align="center">
   <img align="center" src="images/split_category.PNG" width=75%>
@@ -154,7 +154,7 @@ _For more information: [Medium Article](https://towardsdatascience.com/product-s
 
 Many inventory rules and safety stock formula can be used only if the sales distribution of your item is following a normal distribution. Thefore, it's better to know the % of your portofolio that can be managed easily.
 
-_For more information: [Inventory Management for Retail — Stochastic Demand](https://towardsdatascience.com/inventory-management-for-retail-stochastic-demand-3020a43d1c14)_
+_For more information: [Inventory Management for Retail — Stochastic Demand](https://www.samirsaci.com/inventory-management-for-retail-stochastic-demand-2/)_
 
 
 # Build the application locally 🏗️ 
