@@ -14,6 +14,12 @@ Your want to understand the sales volumes distribution (fast/slow movers) and de
 
 I have designed this **Streamlit App** to provide a tool to **Supply Chain Engineers** for Product Segmentation, with a focus on retail products, of their portofolio considering the complexity of the demand and the volumes contribution of each item.
 
+### Youtube Video
+Click on the image below to access the video tutorial that explains the concept behind this solution
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=Qglr9Yqa44I"><img src="https://i.ytimg.com/vi/Qglr9Yqa44I/hqdefault.jpg" alt="20% of Your SKUs Are Doing 80% of the Work"></a>
+</div>
+
 ### Understand the theory behind 📜
 In this [Article](https://www.samirsaci.com/product-segmentation-for-retail-with-python/), you can find details about the theory used to build this tool. 
 
@@ -193,4 +199,11 @@ _For more information: [Inventory Management for Retail — Stochastic Demand](h
 Senior Supply Chain Engineer with an international experience working on Logistics and Transportation operations. \
 Have a look at my portfolio: [Data Science for Supply Chain Portfolio](https://samirsaci.com) \
 For **consulting or advising** on analytics and sustainable supply chain transformation, feel free to contact me via [Logigreen Consulting](https://www.logi-green.com/) \
-Data Science for Warehousing📦, Transportation 🚚 and Demand Forecasting 📈 
+Data Science for Warehousing📦, Transportation 🚚 and Demand Forecasting 📈
+
+## Go further
+
+- **The full write-up, with the reasoning behind the code:** [Product Segmentation for Retail with Python](https://www.samirsaci.com/product-segmentation-for-retail-with-python/?utm_source=github&utm_medium=readme&utm_campaign=segmentation)
+- **The video:** [20% of Your SKUs Are Doing 80% of the Work](https://youtu.be/Qglr9Yqa44I)
+- **Test what you learned:** the [Supply Science App](https://supply-science.com/?utm_source=github&utm_medium=readme&utm_campaign=segmentation) has quizzes and video lessons on supply chain analytics, free and in the browser.
+- **100+ case studies with their source code:** [samirsaci.com](https://www.samirsaci.com/?utm_source=github&utm_medium=readme&utm_campaign=segmentation)
